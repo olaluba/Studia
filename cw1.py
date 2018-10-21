@@ -3,9 +3,17 @@ from math import *
 # Rozkład liczby na czynniki pierwsze
 
 def rozklad_na_czynniki_pierwsze():
+    """
+    Funkcja ta na podstawie liczby całkowitej podanej przez użytkownika obliczy jej rozkład na czynniki pierwsze
+    """
     while True:
         try:
             n = int(input("Proszę podać liczbę do rozkładu na czynniki pierwsze: "))
+            if n >= 0:
+                break
+            else:
+                print("Wartość nie może być mniejsza od zero")
+                continue
         except ValueError:
             print("Podana wartość nie jest liczbą stała")
             continue #omijamy pozostały kod i pytamy jeszcze raz użytkownika o wpisanie liczby
@@ -30,6 +38,7 @@ def rozklad_na_czynniki_pierwsze():
     return r
     #end
 
+print(rozklad_na_czynniki_pierwsze.__doc__)
 rozklad_na_czynniki_pierwsze()
 
 
